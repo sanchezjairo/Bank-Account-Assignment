@@ -17,3 +17,10 @@ class BankAccount:
             self.balance = self.balance - amount - 10
         else:
             print(f'Amount Withdrawn:{amount}')
+    def get_balance(self):
+        print(f'Hello good day your balance is {self.balance}')
+        return self.balance
+    def add_interest(self):
+        interest = self.balance * 0.00083
+        self.balance + interest
+ 
