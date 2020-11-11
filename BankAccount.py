@@ -1,8 +1,5 @@
 import random 
 
-# mylist = [1,2,3,4,5,6,7,8,9,10]
-# x = random.sample(mylist,9) 
-# convert the number to str then slice
 class BankAccount:
     def __init__(self, full_name, account_number, routing_number, balance):
         self.full_name = full_name,
@@ -23,8 +20,8 @@ class BankAccount:
             amount = "{:.2f}".format(self.balance)
             print(f'Amount Withdrawn:{amount}')
     def get_balance(self):
-        print(f'Hello good day your balance is {self.balance}')
-        return self.balance
+        print(f'Hello good day your balance is {"{:.2f}".format(self.balance)}')
+
     def add_interest(self):
         interest = self.balance * 0.00083
         self.balance = self.balance - interest
@@ -32,13 +29,3 @@ class BankAccount:
     def recipt(self):
         self.account_number = (self.account_number[0:4])
         print(f'\n{self.full_name}\n Account No.:****{self.account_number}\n Routing No.:{self.routing_number}\n Balance.:{"{:.2f}".format(self.balance)}\n')
-jairo = BankAccount("Jairo Sanchez",0,0,0)
-sasha = BankAccount("Sasha Cruz",0,0,0)
-jorge = BankAccount("Jorge Mendoza",0,0,0)
-
-jairo.deposit(500)
-jairo.add_interest()
-
-jairo.recipt()
-sasha.recipt()
-jorge.recipt()
