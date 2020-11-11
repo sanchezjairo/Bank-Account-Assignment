@@ -9,7 +9,7 @@ class BankAccount:
     def deposit(self,amount):
         self.balance = amount + self.balance
         amount = "{:.2f}".format(self.balance)
-        print(f'Amount Deposited:{amount}')
+        print(f'Amount Deposited:${amount}')
     def withdraw(self,amount):
         if amount > self.balance:
             print('Insufficient funds. Overdraft fee will be $10')
@@ -18,9 +18,9 @@ class BankAccount:
         else:
             self.balance = self.balance-amount
             amount = "{:.2f}".format(self.balance)
-            print(f'Amount Withdrawn:{amount}')
+            print(f'Amount Withdrawn:${amount}')
     def get_balance(self):
-        print(f'Hello good day your balance is {"{:.2f}".format(self.balance)}')
+        print(f'Hello good day your balance is ${"{:.2f}".format(self.balance)}')
 
     def add_interest(self):
         interest = self.balance * 0.00083
@@ -28,4 +28,6 @@ class BankAccount:
         
     def recipt(self):
         self.account_number = (self.account_number[0:4])
-        print(f'\n{self.full_name}\n Account No.:****{self.account_number}\n Routing No.:{self.routing_number}\n Balance.:{"{:.2f}".format(self.balance)}\n')
+        print(f'\n{self.full_name}\n Account No.:****{self.account_number}\n Routing No.:{self.routing_number}\n Balance.:${"{:.2f}".format(self.balance)}\n')
+jairo = BankAccount('Jairo sanchez',0,0,0)
+jairo.deposit(100)
